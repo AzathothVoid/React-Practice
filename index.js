@@ -1,3 +1,6 @@
+import React from "react";
+import ReactDOM from "react-dom";
+
 function NavBar() {
   return (
     <nav className="nav collapsible">
@@ -34,6 +37,7 @@ function MainContent() {
 ReactDOM.render(
   <div>
     <NavBar />
+    <MainContent />
   </div>,
   document.getElementById("root")
 );
