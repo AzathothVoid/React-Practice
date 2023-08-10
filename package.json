@@ -1,7 +1,7 @@
 {
   "name": "react-practice",
   "version": "1.0.0",
-  "description": "Practicing React",
+  "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -10,9 +10,6 @@
     "type": "git",
     "url": "git+https://github.com/AzathothVoid/React-Practice.git"
   },
-  "keywords": [
-    "react"
-  ],
   "author": "Muhammad Nauman",
   "license": "ISC",
   "bugs": {
@@ -20,7 +17,6 @@
   },
   "homepage": "https://github.com/AzathothVoid/React-Practice#readme",
   "dependencies": {
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "create-react-app": "^5.0.1"
   }
 }
