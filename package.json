@@ -17,6 +17,10 @@
   },
   "homepage": "https://github.com/AzathothVoid/React-Practice#readme",
   "dependencies": {
-    "create-react-app": "^5.0.1"
+    "@babel/core": "^7.22.10",
+    "@babel/preset-react": "^7.22.5",
+    "create-react-app": "^1.2.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
   }
 }
