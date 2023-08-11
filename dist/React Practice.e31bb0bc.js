@@ -28863,43 +28863,47 @@ if ("development" === 'production') {
 } else {
   module.exports = require('./cjs/react-dom.development.js');
 }
-},{"./cjs/react-dom.development.js":"node_modules/react-dom/cjs/react-dom.development.js"}],"index.js":[function(require,module,exports) {
+},{"./cjs/react-dom.development.js":"node_modules/react-dom/cjs/react-dom.development.js"}],"node_modules/react-dom/client.js":[function(require,module,exports) {
+'use strict';
+
+var m = require('react-dom');
+if ("development" === 'production') {
+  exports.createRoot = m.createRoot;
+  exports.hydrateRoot = m.hydrateRoot;
+} else {
+  var i = m.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
+  exports.createRoot = function (c, o) {
+    i.usingClientEntryPoint = true;
+    try {
+      return m.createRoot(c, o);
+    } finally {
+      i.usingClientEntryPoint = false;
+    }
+  };
+  exports.hydrateRoot = function (c, h, o) {
+    i.usingClientEntryPoint = true;
+    try {
+      return m.hydrateRoot(c, h, o);
+    } finally {
+      i.usingClientEntryPoint = false;
+    }
+  };
+}
+},{"react-dom":"node_modules/react-dom/index.js"}],"index.js":[function(require,module,exports) {
 "use strict";
 
 var _react = _interopRequireDefault(require("react"));
-var _reactDom = _interopRequireDefault(require("react-dom"));
+var _client = _interopRequireDefault(require("react-dom/client"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-function NavBar() {
-  return /*#__PURE__*/_react.default.createElement("nav", {
-    className: "nav collapsible"
-  }, /*#__PURE__*/_react.default.createElement("ul", {
-    className: "list nav__list collapsible__content"
-  }, /*#__PURE__*/_react.default.createElement("li", {
-    className: "nav__item"
-  }, /*#__PURE__*/_react.default.createElement("a", {
-    href: ""
-  }, "Item 1")), /*#__PURE__*/_react.default.createElement("li", {
-    className: "nav__item"
-  }, /*#__PURE__*/_react.default.createElement("a", {
-    href: ""
-  }, "Item 2")), /*#__PURE__*/_react.default.createElement("li", {
-    className: "nav__item"
-  }, /*#__PURE__*/_react.default.createElement("a", {
-    href: ""
-  }, "Item 3")), /*#__PURE__*/_react.default.createElement("li", {
-    className: "nav__item"
-  }, /*#__PURE__*/_react.default.createElement("a", {
-    href: ""
-  }, "Item 4"))));
+function ReactInfo() {
+  return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("section", null, /*#__PURE__*/_react.default.createElement("img", {
+    src: "./react-logo.png",
+    alt: "React Logo"
+  })), /*#__PURE__*/_react.default.createElement("section", null, /*#__PURE__*/_react.default.createElement("header", null, /*#__PURE__*/_react.default.createElement("h1", null, "Fun Facts about React")), /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("ul", null, /*#__PURE__*/_react.default.createElement("li", null, "Was First released in 2013"), /*#__PURE__*/_react.default.createElement("li", null, "Was originally created by Jordan Walke"), /*#__PURE__*/_react.default.createElement("li", null, "Has well over 100k stars on github"), /*#__PURE__*/_react.default.createElement("li", null, "Is maintained by facebook")))));
 }
-function MainContent() {
-  return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("h1", null, "First time testing componets in react"));
-}
-(function () {
-  console.log("Sript Runnng");
-})();
-_reactDom.default.render( /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement(NavBar, null), /*#__PURE__*/_react.default.createElement(MainContent, null)), document.getElementById("root"));
-},{"react":"node_modules/react/index.js","react-dom":"node_modules/react-dom/index.js"}],"../../Users/dell/AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+var root = _client.default.createRoot(document.getElementById("root"));
+root.render( /*#__PURE__*/_react.default.createElement(ReactInfo, null));
+},{"react":"node_modules/react/index.js","react-dom/client":"node_modules/react-dom/client.js"}],"../../Users/dell/AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -28924,7 +28928,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "58980" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "52331" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];
