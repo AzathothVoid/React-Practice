@@ -28889,21 +28889,70 @@ if ("development" === 'production') {
     }
   };
 }
-},{"react-dom":"node_modules/react-dom/index.js"}],"index.js":[function(require,module,exports) {
+},{"react-dom":"node_modules/react-dom/index.js"}],"public/images/reactLogo.png":[function(require,module,exports) {
+module.exports = "/reactLogo.a3b7dac5.png";
+},{}],"index.js":[function(require,module,exports) {
 "use strict";
 
 var _react = _interopRequireDefault(require("react"));
 var _client = _interopRequireDefault(require("react-dom/client"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+function Button(_ref) {
+  var content = _ref.content;
+  return /*#__PURE__*/_react.default.createElement("div", {
+    className: "btn"
+  }, content);
+}
+function Header() {
+  return /*#__PURE__*/_react.default.createElement("header", null, /*#__PURE__*/_react.default.createElement("nav", {
+    className: "nav"
+  }, /*#__PURE__*/_react.default.createElement("div", {
+    className: "nav__brand"
+  }, /*#__PURE__*/_react.default.createElement("img", {
+    src: require("./public/images/reactLogo.png"),
+    alt: "something"
+  })), /*#__PURE__*/_react.default.createElement("ul", {
+    className: "list list--nav"
+  }, /*#__PURE__*/_react.default.createElement("li", {
+    className: "nav__item"
+  }, /*#__PURE__*/_react.default.createElement(Button, {
+    content: "Pricing"
+  })), /*#__PURE__*/_react.default.createElement("li", {
+    className: "nav__item"
+  }, /*#__PURE__*/_react.default.createElement(Button, {
+    content: "About"
+  })), /*#__PURE__*/_react.default.createElement("li", {
+    className: "nav__item"
+  }, /*#__PURE__*/_react.default.createElement(Button, {
+    content: "Contact"
+  })))));
+}
+function MainContent() {
+  return /*#__PURE__*/_react.default.createElement("div", {
+    className: "bg"
+  }, /*#__PURE__*/_react.default.createElement("section", {
+    className: "block block--white block-content"
+  }, /*#__PURE__*/_react.default.createElement("header", {
+    className: "block-content__header"
+  }, /*#__PURE__*/_react.default.createElement("h1", {
+    className: "block-content__header__heading"
+  }, "Why i want to learn react")), /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("ul", null, /*#__PURE__*/_react.default.createElement("li", null, "For money"), /*#__PURE__*/_react.default.createElement("li", null, "To learn a new skill"), /*#__PURE__*/_react.default.createElement("li", null, "For my resume"), /*#__PURE__*/_react.default.createElement("li", null, "For experience")))));
+}
+function Footer() {
+  return /*#__PURE__*/_react.default.createElement("footer", {
+    className: "footer"
+  }, /*#__PURE__*/_react.default.createElement("p", {
+    className: "footer__content"
+  }, /*#__PURE__*/_react.default.createElement("small", null, "\xA9 2023 Nauman development. All rights reserved.")));
+}
 function ReactInfo() {
-  return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("section", null, /*#__PURE__*/_react.default.createElement("img", {
-    src: "./react-logo.png",
-    alt: "React Logo"
-  })), /*#__PURE__*/_react.default.createElement("section", null, /*#__PURE__*/_react.default.createElement("header", null, /*#__PURE__*/_react.default.createElement("h1", null, "Fun Facts about React")), /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("ul", null, /*#__PURE__*/_react.default.createElement("li", null, "Was First released in 2013"), /*#__PURE__*/_react.default.createElement("li", null, "Was originally created by Jordan Walke"), /*#__PURE__*/_react.default.createElement("li", null, "Has well over 100k stars on github"), /*#__PURE__*/_react.default.createElement("li", null, "Is maintained by facebook")))));
+  return /*#__PURE__*/_react.default.createElement("div", {
+    className: "container"
+  }, /*#__PURE__*/_react.default.createElement(Header, null), /*#__PURE__*/_react.default.createElement(MainContent, null), /*#__PURE__*/_react.default.createElement(Footer, null));
 }
 var root = _client.default.createRoot(document.getElementById("root"));
 root.render( /*#__PURE__*/_react.default.createElement(ReactInfo, null));
-},{"react":"node_modules/react/index.js","react-dom/client":"node_modules/react-dom/client.js"}],"../../Users/dell/AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","react-dom/client":"node_modules/react-dom/client.js","./public/images/reactLogo.png":"public/images/reactLogo.png"}],"../../Users/dell/AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -28928,7 +28977,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "52331" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "56562" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];
