@@ -28889,13 +28889,14 @@ if ("development" === 'production') {
     }
   };
 }
-},{"react-dom":"node_modules/react-dom/index.js"}],"public/images/reactLogo.png":[function(require,module,exports) {
-module.exports = "/reactLogo.a3b7dac5.png";
-},{}],"index.js":[function(require,module,exports) {
+},{"react-dom":"node_modules/react-dom/index.js"}],"Components/Button.js":[function(require,module,exports) {
 "use strict";
 
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = Button;
 var _react = _interopRequireDefault(require("react"));
-var _client = _interopRequireDefault(require("react-dom/client"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 function Button(_ref) {
   var content = _ref.content;
@@ -28903,30 +28904,51 @@ function Button(_ref) {
     className: "btn"
   }, content);
 }
+},{"react":"node_modules/react/index.js"}],"public/images/reactLogo.png":[function(require,module,exports) {
+module.exports = "/reactLogo.a3b7dac5.png";
+},{}],"Components/Header.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = Header;
+var _Button = _interopRequireDefault(require("./Button.js"));
+var _react = _interopRequireDefault(require("react"));
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 function Header() {
   return /*#__PURE__*/_react.default.createElement("header", null, /*#__PURE__*/_react.default.createElement("nav", {
     className: "nav"
   }, /*#__PURE__*/_react.default.createElement("div", {
     className: "nav__brand"
   }, /*#__PURE__*/_react.default.createElement("img", {
-    src: require("./public/images/reactLogo.png"),
+    src: require("../public/images/reactLogo.png"),
     alt: "something"
   })), /*#__PURE__*/_react.default.createElement("ul", {
     className: "list list--nav"
   }, /*#__PURE__*/_react.default.createElement("li", {
     className: "nav__item"
-  }, /*#__PURE__*/_react.default.createElement(Button, {
+  }, /*#__PURE__*/_react.default.createElement(_Button.default, {
     content: "Pricing"
   })), /*#__PURE__*/_react.default.createElement("li", {
     className: "nav__item"
-  }, /*#__PURE__*/_react.default.createElement(Button, {
+  }, /*#__PURE__*/_react.default.createElement(_Button.default, {
     content: "About"
   })), /*#__PURE__*/_react.default.createElement("li", {
     className: "nav__item"
-  }, /*#__PURE__*/_react.default.createElement(Button, {
+  }, /*#__PURE__*/_react.default.createElement(_Button.default, {
     content: "Contact"
   })))));
 }
+},{"./Button.js":"Components/Button.js","react":"node_modules/react/index.js","../public/images/reactLogo.png":"public/images/reactLogo.png"}],"Components/MainContent.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = MainContent;
+var _react = _interopRequireDefault(require("react"));
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 function MainContent() {
   return /*#__PURE__*/_react.default.createElement("div", {
     className: "bg"
@@ -28938,6 +28960,15 @@ function MainContent() {
     className: "block-content__header__heading"
   }, "Why i want to learn react")), /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("ul", null, /*#__PURE__*/_react.default.createElement("li", null, "For money"), /*#__PURE__*/_react.default.createElement("li", null, "To learn a new skill"), /*#__PURE__*/_react.default.createElement("li", null, "For my resume"), /*#__PURE__*/_react.default.createElement("li", null, "For experience")))));
 }
+},{"react":"node_modules/react/index.js"}],"Components/Footer.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = Footer;
+var _react = _interopRequireDefault(require("react"));
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 function Footer() {
   return /*#__PURE__*/_react.default.createElement("footer", {
     className: "footer"
@@ -28945,14 +28976,23 @@ function Footer() {
     className: "footer__content"
   }, /*#__PURE__*/_react.default.createElement("small", null, "\xA9 2023 Nauman development. All rights reserved.")));
 }
+},{"react":"node_modules/react/index.js"}],"index.js":[function(require,module,exports) {
+"use strict";
+
+var _react = _interopRequireDefault(require("react"));
+var _client = _interopRequireDefault(require("react-dom/client"));
+var _Header = _interopRequireDefault(require("./Components/Header"));
+var _MainContent = _interopRequireDefault(require("./Components/MainContent"));
+var _Footer = _interopRequireDefault(require("./Components/Footer"));
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 function ReactInfo() {
   return /*#__PURE__*/_react.default.createElement("div", {
     className: "container"
-  }, /*#__PURE__*/_react.default.createElement(Header, null), /*#__PURE__*/_react.default.createElement(MainContent, null), /*#__PURE__*/_react.default.createElement(Footer, null));
+  }, /*#__PURE__*/_react.default.createElement(_Header.default, null), /*#__PURE__*/_react.default.createElement(_MainContent.default, null), /*#__PURE__*/_react.default.createElement(_Footer.default, null));
 }
 var root = _client.default.createRoot(document.getElementById("root"));
 root.render( /*#__PURE__*/_react.default.createElement(ReactInfo, null));
-},{"react":"node_modules/react/index.js","react-dom/client":"node_modules/react-dom/client.js","./public/images/reactLogo.png":"public/images/reactLogo.png"}],"../../Users/dell/AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","react-dom/client":"node_modules/react-dom/client.js","./Components/Header":"Components/Header.js","./Components/MainContent":"Components/MainContent.js","./Components/Footer":"Components/Footer.js"}],"../../Users/dell/AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
