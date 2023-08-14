@@ -1,42 +1,105 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+:root {
+  --color-nav-primary: #21222a;
+  --color-nav-content: #deebf8;
+  --color-react-blue: #61dafb;
+  --color-main-primary: #282d35;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+html {
+  font-size: 62.5%;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+
+body {
+  font-family: Inter, sans-serif;
+  margin: 0;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--color-nav-primary);
+  padding: 1.5rem 3rem;
+}
+
+.nav__branding {
+  display: flex;
+  color: var(--color-react-blue);
+  width: 30px;
+  align-items: center;
+}
+
+.nav__branding__heading {
+  font-size: 2.25rem;
+  font-weight: bold;
+}
+
+.nav__branding > img {
+  width: 100%;
+  margin-right: 1rem;
+}
+
+.nav__content {
+  color: var(--color-nav-content);
+  font-weight: 600;
+  font-size: 1.6rem;
+  margin: 0;
+}
+
+.main {
+  --background-image-size: 50vw;
+  background: var(--color-main-primary) url("./assets/react.svg")
+    calc(100% + var(--background-image-size) / 2) 75% /
+    var(--background-image-size) no-repeat;
+  color: #fff;
+  padding: 4rem 3rem;
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+.main__heading {
+  font-size: 4rem;
+  font-weight: bold;
+  letter-spacing: -0.05rem;
+}
+
+@media screen and (min-width: 768px) {
+  .main {
+    --background-image-size: 75vh;
   }
-  to {                
-    transform: rotate(360deg);
-  }
+}
+.list {
+  padding: 0;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.list--react {
+  margin: 2rem 3.5rem;
 }
 
-.card {
-  padding: 2em;
+.list__item {
+  font-size: 1.6rem;
+  margin-block: 1.5rem;
+  max-width: 70vw;
 }
 
-.read-the-docs {
-  color: #888;
+.list--react .list__item::marker {
+  color: var(--color-react-blue);
+  font-size: 2.5rem;
 }
